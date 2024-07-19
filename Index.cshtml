@@ -1,0 +1,102 @@
+﻿@page
+@model aspnetcoreapp.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Sagar's Calculator</h1>
+
+        <form method="post" class="calculator-form">
+            <input type="text" placeholder="First Number" name="num1" class="form-control mb-3">
+            <input type="text" placeholder="Second Number" name="num2" class="form-control mb-3">
+            
+            <div class="button-group">
+                <input type="submit" value="Square" name="Square" class="btn btn-primary">
+                <input type="submit" value="Multiply" name="Multiply" class="btn btn-primary">
+                <input type="submit" value="Power" name="Power" class="btn btn-primary">
+                <input type="submit" value="Add" name="Add" class="btn btn-primary">
+                <input type="submit" value="Cube" name="Cube" class="btn btn-primary">
+                <input type="submit" value="Subtract" name="Subtract" class="btn btn-primary">
+                <input type="submit" value="Divide" name="Divide" class="btn btn-primary">
+            </div>
+
+            <div class="result-field">
+                <label>Result:</label>
+                <input type="text" value="@ViewData["Result"]" class="form-control result-input" disabled>
+            </div>
+        </form>
+
+        <p>Learn about <a href="https://learn.microsoft.com/aspnet/core" target="_blank">building Web apps with ASP.NET Core</a>.</p>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: #333;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container {
+        max-width: 600px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        margin-bottom: 30px;
+    }
+    .calculator-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .form-control {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .button-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+    .btn {
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+        background-color: #0056b3;
+    }
+    .result-field {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .result-field label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+    .result-input {
+        flex: 1;
+        border: none;
+        background-color: #e0e0e0;
+        padding: 10px;
+        border-radius: 5px;
+    }
+</style>
